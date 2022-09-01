@@ -1,4 +1,4 @@
-package org.example;
+package lecture;
 
 import java.util.List;
 
@@ -29,6 +29,7 @@ public class LectureOne {
         numbers.stream().forEach(LectureOne::print);// method reference
         // simple way
         numbers.stream().forEach(System.out::println);
+        //note: // I know this only can be forEach, but I wanted to use by the stream()
     }
 
     private static void printEvenNumbersInListStructured(List<Integer> numbers) {

@@ -1,4 +1,4 @@
-package org.example;
+package exercise;
 
 import java.util.List;
 
@@ -27,14 +27,13 @@ public class ExerciseLectureOne {
         printNumberOfCharactersCourses(courses);
     }
 
-
-
     private static void oddNumbers(List<Integer> numbers){
         numbers.stream().filter(number -> number % 2 != 0)
                 .forEach(System.out::println);
     }
 
     private static void printIndividually(List<String> courses){
+        // I know this only can be forEach, but I wanted to use by the stream()
         courses.stream().forEach(System.out::println);
     }
 
