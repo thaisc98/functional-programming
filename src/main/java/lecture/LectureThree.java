@@ -97,6 +97,48 @@ public class LectureThree {
         // take one parametersand return only one value  with the same type
         UnaryOperator<Integer> unaryOperator = (x) -> 3 * x;
         System.out.println(unaryOperator.apply(10));
+
+        //Interfaces
+        // Use biPredicate whe you have two inputs in the lambda expression
+        // and want to return a boolean
+        BiPredicate<Integer,String> biPredicate = (number,str) -> {
+            return number < 10 && str.length() > 5;
+        };
+        System.out.println(biPredicate.test(5,"Helloo"));
+
+        //BiFunction
+        BiFunction<Integer,String, String> biFunction = (number,str) -> {
+            return number + " " +  str;
+        };
+        System.out.println(biFunction.apply(5,"Helloo"));
+
+        //BiConsumir two inputs and not return anything
+        BiConsumer<Integer, String> biConsumer = (number,str2) ->{
+            System.out.println(number);
+            System.out.println(str2);
+        };
+
+        biConsumer.accept(5, "Hello");
+
+        //Using primitives functional interfaces
+        //IntBinaryOperator
+        //I can do this? why use IntBinaryOperator?
+        BinaryOperator<Integer> sumBinaryOperator2 = (x,y) -> x + y;
+        // Wrapper class: boxing and unboxing and its inefficient.
+        // Primitives
+        IntBinaryOperator intBinaryOperator = (x,y) -> x + y;
+
+
+        //IntConsumer
+        //IntFunction
+        //IntPredicate
+        //IntSupplier
+        //IntToDoubleFunction
+        //IntToLongFunction
+        //IntUnaryOperator
+
+        //Long, Double Int
+
     }
 
     private static void filterAndPrint(List<Integer> numbers, Predicate<Integer> predicated) {
