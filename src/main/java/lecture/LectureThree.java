@@ -1,9 +1,8 @@
 package lecture;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.Random;
+import java.util.function.*;
 
 public class LectureThree {
 
@@ -82,7 +81,22 @@ public class LectureThree {
         // passing the logic of the method as an argument
         // passing the behavior of the method as an argument
         filterAndPrint(numbers,  x -> x % 3 == 0);
+        System.out.println("Supplier");
 
+        // dosen't get any input but return a obj
+        Supplier<Integer> randomInteger = () -> {
+            //random number
+            Random random = new Random();
+            return random.nextInt(1000);
+        };
+        System.out.println(randomInteger.get());
+
+        // Offers to elements at the same time, and returns the values of the same type.
+        BinaryOperator<Integer> sumBinaryOperator = (x,y) -> x + y;
+
+        // take one parametersand return only one value  with the same type
+        UnaryOperator<Integer> unaryOperator = (x) -> 3 * x;
+        System.out.println(unaryOperator.apply(10));
     }
 
     private static void filterAndPrint(List<Integer> numbers, Predicate<Integer> predicated) {
