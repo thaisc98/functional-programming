@@ -94,7 +94,7 @@ public class LectureThree {
         // Offers to elements at the same time, and returns the values of the same type.
         BinaryOperator<Integer> sumBinaryOperator = (x,y) -> x + y;
 
-        // take one parametersand return only one value  with the same type
+        // take one parameter return only one value  with the same type
         UnaryOperator<Integer> unaryOperator = (x) -> 3 * x;
         System.out.println(unaryOperator.apply(10));
 
@@ -138,6 +138,15 @@ public class LectureThree {
         //IntUnaryOperator
 
         //Long, Double Int
+
+        // Method References
+        List<String> courses = List.of("Spring", "Spring boot", "API", "Microservices", "AMS","PCP","Azure","Docker", "Kubernetes");
+        courses.stream()
+                .map(String::toUpperCase) // method which is on the object
+                .forEach(System.out::println);
+
+        Supplier<String> supplier = String::new; // this is called a constructor reference
+        // to use this to create new objects.
 
     }
 
